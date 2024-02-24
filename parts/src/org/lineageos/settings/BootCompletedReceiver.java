@@ -20,25 +20,18 @@ package org.lineageos.settings;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.util.Log;
 
-
-import androidx.preference.PreferenceManager;
-import org.lineageos.settings.thermal.ThermalUtils;
-import org.lineageos.settings.touchsampling.TouchSamplingUtils;
-import org.lineageos.settings.refreshrate.RefreshUtils;
+import org.lineageos.settings.doze.DozeUtils;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
-
     private static final boolean DEBUG = false;
     private static final String TAG = "XiaomiParts";
 
     @Override
     public void onReceive(final Context context, Intent intent) {
-        if (DEBUG) Log.d(TAG, "Received boot completed intent");
-        ThermalUtils.startService(context);
-        TouchSamplingUtils.restoreSamplingValue(context);
-        RefreshUtils.startService(context);        
+        if (DEBUG)
+            Log.d(TAG, "Received boot completed intent");
+        DozeUtils.checkDozeService(context);
     }
 }
