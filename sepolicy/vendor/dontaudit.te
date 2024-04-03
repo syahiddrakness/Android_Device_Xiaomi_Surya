@@ -17,8 +17,6 @@ dontaudit vendor_cnd vendor_diag_device:chr_file rw_file_perms;
 
 dontaudit vendor_hal_imsrtp vendor_diag_device:chr_file rw_file_perms;
 
-dontaudit vendor_hal_rcsservice vendor_diag_device:chr_file rw_file_perms;
-
 dontaudit vendor_ims vendor_diag_device:chr_file rw_file_perms;
 
 dontaudit vendor_netmgrd vendor_diag_device:chr_file rw_file_perms;
